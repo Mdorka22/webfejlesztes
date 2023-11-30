@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Mezőszentgyörgyi Dorka">
+    <meta name="description" content="A Wellhello zenekar weboldala">
+    <title>Wellhello</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300&family=Wallpoet&display=swap" rel="stylesheet">
+    <link href="wellhello.css" rel="stylesheet">
+    <script src="jquery-3.7.1.js"></script>
+    <script src="dist/jquery.validate.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#uzenetkuldes").validate({
+                rules: {
+                    tnev: {
+                        required: true,
+                        minlength: 4
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    telefon:{required: true,
+                        minlength: 11,
+                        maxlength: 12
+                    },
+                    uzenet:{required:true},
+                    szabalyzat:{required: true},
+
+
+                },
+                messages: {
+                    tnev: {
+                        required: "A név megadása kötelező",
+                        minlength: "Legalább 4 karakter hosszú nevet kell megadni"
+                    },
+                    email: {
+                        required: "Az e-mail cím megadása kötelező",
+                        email: "Kérlek létező e-mail címet adj meg!"
+                    },
+                    telefon:{
+                        required: "Telefonszám megadása kötelező",
+                        minlength: "Nem megfelelő formátum (11 vagy 12 karakter megadása engedélyezett)",
+                        maxlength: "Nem megfelelő formátum (11 vagy 12 karakter megadása engedélyezett)"
+                    },
+                    uzenet:{required: "Írd be az üzeneted!"},
+
+                    szabalyzat: { required: "Kérlek fogadd el az adatvédelmi szabályzatot"},
+                }
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <header class="flex-kontener">
+        <h1><a id="kezdolap" href="index.html">Wellhello</a></h1>
+    </header>
+    <nav class="flex-kontener">
+        <ul>
+            <li><a href="index.html">Főoldal</a></li>
+            <li><a href="rolunk.html">Rólunk</a></li>
+            <li><a href="koncertek.html">Koncertek</a></li>
+            <li><a href="termekek.html">Termékek</a></li>
+            <li><a href="#" id="active">Kontakt</a></li>
+            <li><a href="velemeny.html">Vélemény</a></li>
+        </ul>
+    </nav>
+    <section class="elerhetoseg">
+        <h3 class="kontaktcim">Kontaktok</h3>
+        <h4 class="alcim">Általános menedzser</h4>
+        <p>Kovács Anna<br>Telefonszám: +36 20 245 1678<br>E-mail cím:kovacsa@gmail.com</p>
+        <h4 class="alcim">Koncertszervező</h4>
+        <p>Tóth Kristóf<br>Telefonszám: +36 20 789 1738<br>E-mail cím:tothkristof@gmail.com</p>
+        <h4 class="alcim">Sajtó</h4>
+        <p>Juhász Róbert<br>Telefonszám: +36 30 295 9925<br>E-mail cím:juhaszr.sajto@gmail.com</p>
+        <h4 class="alcim">Turnémenedzser</h4>
+        <p>Fehér Kata<br>Telefonszám: +36 70 376 1879<br>E-mail cím:kata.feher24@gmail.com</p>
+    </section>
+    <aside class="kerdes">
+        <h3 class="kontaktcim">Vagy írj nekünk személyesen</h3>
+        <form id="uzenetkuldes" method="post" action="http://szamtud.uni-corvinus.hu/receive.php" novalidate>
+            <p><label><input size="30" type="text" name="tnev" placeholder="Teljes név"></label></p>
+            <p><label><input size="30" type="email" name="email" placeholder="E-mail cím"></label></p>
+            <p><label><input size="30" type="tel" name="telefon" placeholder="Telefonszám"></label></p>
+            <p><label><textarea name="uzenet" placeholder="Üzenet" rows="10" cols="30"></textarea></label></p>
+            <p><label><input type="checkbox" name="szabalyzat">Adatvédelmi szabályzat elfogadása</label></p>
+            <p><label><input type="checkbox" name="hirlevel" checked>Feliratkozás a hírlevélre</label></p>
+            <input type="submit" name="kuldes" value="Küldés">
+        </form>
+    </aside>
+    <footer>
+        <p>Az oldal nem reprezentálja a valós zenekart<br>
+            &copy; Mezőszentgyörgyi Dorka-Corvinus Egyetem 2023</p>
+    </footer>
+</body>
+
+</html>

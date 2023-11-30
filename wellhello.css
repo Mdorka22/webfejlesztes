@@ -1,0 +1,499 @@
+/*Minden oldalra vonatkozó formázás*/
+* {
+    box-sizing: border-box;
+}
+
+html {
+    padding: 0px;
+    margin: 0px;
+    background-color: #3a7ca5;
+    scroll-behavior: smooth;
+}
+
+.flex-kontener {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+/*Fejléc formázása*/
+header {
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Kalam', 'cursive';
+    letter-spacing: 20px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px;
+
+}
+
+header h1 a {
+    color: #d9dcd6;
+    text-decoration: none;
+}
+
+/*Menüre vonatkozó formázás*/
+
+nav ul {
+    list-style-type: none;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0;
+}
+
+nav li a {
+    display: block;
+    border: 4px solid #d9dcd6;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 5px;
+    text-decoration: none;
+    background-color: #16425b;
+    color: #d9dcd6;
+    text-align: center;
+    width: 350px;
+}
+
+nav a#active {
+    background-color: #001f54;
+}
+
+
+/*Kezdőlapra vonatkozó formázás*/
+div#flex-kontener {
+    text-align: center;
+}
+
+img.borito {
+    border: 2px solid black;
+    max-width: 60%;
+    height: auto;
+    text-align: center;
+}
+
+div#flex-kontener section a.gomb {
+    background-color: #001f54;
+    color: #d9dcd6;
+    border-radius: 10px 20px;
+    border: 2px solid #d9dcd6;
+    padding: 20px;
+    text-decoration: none;
+}
+
+div#flex-kontener section p.ujzene {
+    font-size: 20px;
+    color: #d9dcd6;
+    margin: 20px 0px 40px 0px;
+}
+
+div#flex-kontener h3 {
+    font-size: 40px;
+    font-family: 'Bebas Neue', sans-serif;
+    border-bottom: 2px grey double;
+    color: darkgray;
+}
+
+div#flex-kontener section table.bemutato {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    border-spacing: 12px;
+    background-color: #8ecae6;
+    border: solid black 4px;
+    width: 85%;
+}
+
+div#flex-kontener section table.bemutato td {
+    border: solid black 2px;
+    padding: 5px;
+
+}
+
+
+
+div#flex-kontener section table.bemutato tr {
+    display: flex;
+    flex: 0 0 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+table.datumok {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    border-spacing: 12px;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #d9dcd6;
+}
+
+table.datumok td {
+    border-bottom: solid black 2px;
+    padding: 10px;
+}
+
+.kepek {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    width: 80vw;
+    height: 80vw;
+}
+
+div#flex-kontener section.feliratkozas {
+    font-size: 40px;
+    color: darkgrey;
+    font-family: 'Wallpoet', sans-serif;
+    font-style: italic;
+    margin: 0px;
+    padding: 0px;
+}
+
+div#flex-kontener section.feliratkozas label.error {
+    color: rgb(255, 153, 0);
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px;
+}
+
+div#flex-kontener section.kovess {
+    font-size: 40px;
+    color: darkgray;
+    font-family: 'Wallpoet', sans-serif;
+    font-style: italic;
+}
+
+div#flex-kontener section.kovess img.kep {
+    width: 32px;
+    height: auto;
+}
+
+/*Rólunk lap formázása*/
+div article h2 {
+    color: #001f54;
+    font-family: 'Wallpoet', sans-serif;
+    text-align: left;
+}
+
+article.kezdetek {
+    background-color: #8ecae6;
+    padding: 5px;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.zenekarifoto {
+    height: 200px;
+    float: right;
+    margin: 5px 20px;
+}
+
+article.tagok {
+    background-color: rgb(17, 102, 198);
+    padding: 5px;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.tag {
+    height: 100px;
+    margin: 5px 20px;
+    float: right;
+}
+
+.tag:hover {
+    transform: scale(1.25);
+}
+
+article.tagok h3 {
+    color: #011230;
+    font-family: 'Wallpoet', sans-serif;
+    font-size: 20px;
+    margin-top: 50px;
+}
+
+aside.zenek {
+    background-color: rgb(56, 136, 228);
+    padding: 5px;
+    border-radius: 20px;
+    margin: 10px;
+    flex: 1 1 100%;
+}
+
+aside.zenek h3 {
+    color: #011230;
+    font-family: 'Wallpoet', sans-serif;
+    font-size: 20px;
+}
+
+aside.zenek ul {
+    list-style-image: url("rolunk/music-note.png");
+}
+
+/*Koncertek lap formázása*/
+h3.koncert {
+    font-family: 'Wallpoet', sans-serif;
+    font-size: 40px;
+    color: #001f54;
+    font-style: italic;
+    text-align: center;
+}
+
+h4.gyere {
+    font-family: 'Wallpoet', sans-serif;
+    font-size: 20px;
+    color: rgb(5, 57, 116);
+    font-style: italic;
+    text-align: center;
+}
+
+/*Termékek lap formázása*/
+.termekcim {
+    color: #011230;
+    font-family: 'Wallpoet', sans-serif;
+    font-size: 50px;
+    text-align: center;
+    font-style: italic;
+}
+
+.arak {
+    text-align: center;
+    border: dotted 3px white;
+    border-radius: 20px;
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+}
+
+table.termektabla caption {
+    color: #011230;
+    font-family: 'Wallpoet', sans-serif;
+    font-size: 30px;
+    text-align: center;
+    font-style: italic;
+
+}
+
+table.termektabla tr td img {
+    width: 70%;
+
+}
+
+table.termektabla {
+    border: solid rgb(5, 57, 116) 5px;
+    text-align: center;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table.termektabla td {
+    border-left: solid rgb(5, 57, 116) 2px;
+    padding: 10px;
+}
+
+form#adatok label.error {
+    color: rgb(255, 153, 0);
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px;
+}
+
+.szamito {
+    margin: 10px;
+    font-size: 30px;
+    text-align: center;
+}
+
+/*Kontakt lap formázása*/
+h3.kontaktcim {
+    font-family: 'Wallpoet', sans-serif;
+    font-size: 40px;
+    color: #001f54;
+    font-style: italic;
+    text-align: center;
+}
+
+h4.alcim {
+    font-family: 'Wallpoet', sans-serif;
+    font-size: 22px;
+    color: rgb(5, 57, 116);
+    font-style: italic;
+    text-align: center;
+}
+
+section.elerhetoseg p {
+    border: 2px solid #001f54;
+    background-color: whitesmoke;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    color: #001f54;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 300px;
+    border-radius: 20px 10px;
+}
+
+aside.kerdes {
+    text-align: center;
+}
+
+form#uzenetkuldes label.error {
+    color: rgb(255, 153, 0);
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px;
+}
+
+/*Vélemény lap formázása*/
+.bev {
+    background-color: #011230;
+    color: white;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 20px;
+    font-style: italic;
+    padding: 20px;
+    max-width: 80%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nyer {
+    background-color: #8ecae6;
+    color: white;
+    font-size: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 20px;
+    padding: 20px;
+    max-width: 70%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cim {
+    text-align: center;
+    font-family: 'Wallpoet', sans-serif;
+    font-size: 20px;
+    color: rgb(5, 57, 116);
+}
+
+.velemenyek {
+    text-align: left;
+    border: solid rgb(5, 57, 116) 5px;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80%;
+}
+
+.keretes {
+    border: solid rgb(5, 57, 116) 2px;
+    padding: 10px;
+    vertical-align: baseline;
+}
+
+.barmi {
+    border: solid rgb(5, 57, 116) 2px;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+form#velemeny label.error {
+    color: rgb(255, 153, 0);
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px;
+}
+
+/*Lábléc formázása*/
+footer {
+    text-align: center;
+    color: #d9dcd6;
+    font-size: 12px;
+
+}
+
+
+@media all and (min-width: 600px) {
+
+    /*Tablet*/
+    header {
+        font-size: 40px;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav li a {
+        width: 200px;
+    }
+
+    article.tagok {
+        flex-basis: 72%;
+    }
+
+    aside.zenek {
+        flex-basis: 24%;
+    }
+
+}
+
+@media all and (min-width: 768px) {
+
+    /*Számítógép*/
+    header {
+        font-size: 40px;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: row;
+    }
+
+    nav li a {
+        width: 100px;
+    }
+
+    div#flex-kontener section table.bemutato td {
+        width: 50%;
+        height: 240px;
+
+    }
+
+    div#flex-kontener section table.bemutato tr {
+        display: flex;
+        justify-content: center;
+        flex-basis: 45%;
+        text-align: center;
+    }
+
+    article.tagok {
+        flex-basis: 72%;
+    }
+
+    aside.zenek {
+        flex-basis: 24%;
+    }
+}

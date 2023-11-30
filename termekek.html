@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Mezőszentgyörgyi Dorka">
+    <meta name="description" content="A Wellhello zenekar weboldala">
+    <title>Wellhello</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300&family=Wallpoet&display=swap" rel="stylesheet">
+    <link href="wellhello.css" rel="stylesheet">
+    <script src="jquery-3.7.1.js"></script>
+    <script src="dist/jquery.validate.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#adatok").validate({
+                rules: {
+                    tnev: {
+                        required: true,
+                        minlength: 4
+                    },
+                    emailcim: {
+                        required: true,
+                        email: true
+                    },
+                    iranyitosz: {
+                        required: true,
+                        number: true,
+                        rangelength: [4,4]
+                    },
+                    varos: {
+                        required: true
+
+                    },
+                    utca: { required: true },
+                    feltetel:{required: true},
+
+
+                },
+                messages: {
+                    tnev: {
+                        required: "A név megadása kötelező",
+                        minlength: "Legalább 4 karakter hosszú nevet kell megadni"
+                    },
+                    emailcim: {
+                        required: "Az e-mail cím megadása kötelező",
+                        email: "Kérlek létező e-mail címet adj meg!"
+                    },
+                    iranyitosz: {
+                        required: "Az irányítószám megadása kötelező",
+                        number: "Számokat adj meg",
+                        rangelength: "Létező irányítószámot adj meg (négyjegyű)"
+                    },
+                    varos: {
+                        required: "Város megadása kötelező"
+                    },
+                    utca: { required: "Cím megadása kötelező" },
+                    feltetel: { required: "Kérlek fogadd el a vásárlási feltételeket"},
+                }
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <header class="flex-kontener">
+        <h1><a id="kezdolap" href="index.html">Wellhello</a></h1>
+    </header>
+    <nav class="flex-kontener">
+        <ul>
+            <li><a href="index.html">Főoldal</a></li>
+            <li><a href="rolunk.html">Rólunk</a></li>
+            <li><a href="koncertek.html">Koncertek</a></li>
+            <li><a href="#" id="active">Termékek</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="velemeny.html">Vélemény</a></li>
+        </ul>
+    </nav>
+    <section>
+        <h3 class="termekcim">Termékek</h3>
+        <p class="arak">Áraink:<br>
+            Pólók: 5000Ft<br>
+            Sapkák: 3000Ft<br>
+            CD-k: 4000Ft<br>
+            Kiszállítás: 1500Ft<br>
+            Kedvezmények<br>
+            5 db termék vásárlása esetén 10%, míg 10db termék vásárlása esetén 20% kedvezményt adunk<br>
+            20 000Ft feletti vásárlás esetén eltekintünk a kiszállítási díjtól<br>
+            3 db azonos típusú termék vásárlása esetén egy dedikált CD-t adunk ajándékba
+        </p>
+        <form id="adatok" method="post" action="http://szamtud.uni-corvinus.hu/receive.php" novalidate>
+            <table class="termektabla">
+                <caption>Férfi pólók</caption>
+                <tr>
+                    <td><img src="termekek/shop1.jpg" alt="Pezsgőeső póló mintás"></td>
+                    <td><img src="termekek/shop6.jpg" alt="Elnöki ügy póló"></td>
+                    <td><img src="termekek/shop9.jpg" alt="Pezsgőeső póló feliratos"></td>
+                </tr>
+                <tr>
+                    <td><label>Póló színe: <input type="color" name="polo1szin"></label><br> 
+                        <label>Felirat színe:<input type="color" name="polo1feliratszin"></label><br>
+                        <label>Méret:<select name="meret1">
+                                <option>XS</option>
+                                <option>S</option>
+                                <option>M</option>
+                                <option>L</option>
+                                <option>XL</option>
+                                <option>XXL</option>
+                            </select></label><br>
+                         <label>Darabszám:<input type="number" value="0" min="0" max="10" name="polo1db"
+                                id="polodb1"></label>
+                    </td>
+                    <td> <label>Póló színe:<input type="color" name="polo2szin"></label><br> <label>Felirat színe:<input
+                                type="color" name="polo2feliratszin"></label><br>
+                        <label>Méret:<select name="meret2">
+                                <option>XS</option>
+                                <option>S</option>
+                                <option>M</option>
+                                <option>L</option>
+                                <option>XL</option>
+                                <option>XXL</option>
+                            </select></label><br>
+                         <label>Darabszám:<input type="number" value="0" min="0" max="10" name="polo2db"
+                                id="polodb2"></label>
+                    </td>
+                    <td><label>Póló színe: <input type="color" name="polo3szin"></label><br><label>Felirat színe: <input
+                                type="color" name="polo3feliratszin"></label><br>
+                        <label>Méret:<select name="meret3">
+                                <option>XS</option>
+                                <option>S</option>
+                                <option>M</option>
+                                <option>L</option>
+                                <option>XL</option>
+                                <option>XXL</option>
+                            </select></label><br>
+                        <label>Darabszám: <input type="number" value="0" min="0" max="10" name="polo3db"
+                                id="polodb3"></label>
+                    </td>
+                </tr>
+            </table>
+            <table class="termektabla">
+                <caption>Női pólók</caption>
+                <tr>
+                    <td><img src="termekek/shop7.jpg" alt="Nem olyan lány1"></td>
+                    <td><img src="termekek/shop2.jpg" alt="Barátom"></td>
+                    <td><img src="termekek/shop8.jpg" alt="Nem olyan lány2"></td>
+                </tr>
+                <tr>
+                    <td><label>Póló színe: <input type="color" name="polo4szin"></label><br> <label>Felirat színe:<input
+                                type="color" name="polo4feliratszin"></label><br>
+                        <label>Méret:<select name="meret4">
+                                <option>XXS</option>
+                                <option>XS</option>
+                                <option>S</option>
+                                <option>M</option>
+                                <option>L</option>
+                                <option>XL</option>
+                            </select></label><br>
+                         <label>Darabszám:<input type="number" value="0" min="0" max="10" name="polo4db"
+                                id="polodb4"></label>
+                    </td>
+                    <td> <label>Póló színe:<input type="color" name="polo5szin"></label><br> <label>Felirat színe:<input
+                                type="color" name="polo5feliratszin"></label><br>
+                        <label>Méret:<select name="meret5">
+                                <option>XXS</option>
+                                <option>XS</option>
+                                <option>S</option>
+                                <option>M</option>
+                                <option>L</option>
+                                <option>XL</option>
+                            </select></label><br>
+                         <label>Darabszám:<input type="number" value="0" min="0" max="10" name="polo5db"
+                                id="polodb5"></label>
+                    </td>
+                    <td> <label>Póló színe:<input type="color" name="polo6szin"></label><br><label>Felirat színe: <input
+                                type="color" name="polo6feliratszin"></label><br>
+                        <label>Méret:<select name="meret6">
+                                <option>XXS</option>
+                                <option>XS</option>
+                                <option>S</option>
+                                <option>M</option>
+                                <option>L</option>
+                                <option>XL</option>
+                            </select></label><br>
+                         <label>Darabszám:<input type="number" value="0" min="0" max="10" name="polo6db"
+                                id="polodb6"></label>
+                    </td>
+                </tr>
+            </table>
+            <table class="termektabla">
+                <caption>Sapkák</caption>
+                <tr>
+                    <td><img src="termekek/shop3.jpg" alt="Nem olyan lány sapka1"></td>
+                    <td><img src="termekek/shop5.jpg" alt="Elnök sapka"></td>
+                    <td><img src="termekek/shop4.jpg" alt="Nem olyan lány sapka2"></td>
+                </tr>
+                <tr>
+                    <td> <label>Sapka színe:<input type="color" name="sapka1szin"></label><br>
+                        <label>Felirat színe:<input type="color" name="sapka1feliratszin"></label><br>
+                         <label>Darabszám:<input type="number" value="0" min="0" max="10" name="sapka1db"
+                                id="sapkadb1"></label>
+                    </td>
+                    <td><label>Sapka színe: <input type="color" name="sapka2szin"></label><br>
+                        <label>#elnök színe:<input type="color" name="sapka1elnokfeliratszin"></label><br>
+                        <label>Kör színe<input type="color" name="sapka2korszin"></label><br>
+                        <label>Darabszám:<input type="number" value="0" min="0" max="10" name="sapka2db"
+                                id="sapkadb2"></label>
+                    </td>
+                    <td><label>Sapka színe: <input type="color" name="sapka3szin"></label><br>
+                        <label>#elnök színe:<input type="color" name="sapka3elnokfeliratszin"></label><br>
+                        <label>Asszony felirat színe:<input type="color" name="sapka3asszonyfeliratszin"></label><br>
+                        <label>Darabszám:<input type="number" value="0" min="0" max="10" name="sapka3db"
+                                id="sapkadb3"></label>
+                    </td>
+                </tr>
+            </table>
+            <table class="termektabla">
+                <caption>CD-k</caption>
+                <tr>
+                    <td><img src="termekek/shop10.jpg" alt="#Sohavégetnemérős"></td>
+                    <td><img src="termekek/shop11.jpg" alt="SSSS!"></td>
+                    <td><img src="termekek/shop12.jpg" alt="Elnöki ügy"></td>
+                </tr>
+                <tr>
+                    <td> <label>Darabszám: <input type="number" value="0" min="0" max="10" name="cd1db"
+                                id="cddb1"></label>
+                    </td>
+                    <td> <label>Darabszám: <input type="number" value="0" min="0" max="10" name="cd1db"
+                                id="cddb2"></label>
+                    </td>
+                    <td><label>Darabszám: <input type="number" value="0" min="0" max="10" name="cd1db"
+                                id="cddb3"></label>
+                    </td>
+                </tr>
+            </table>
+            <p class="szamito">
+                <input type="text" name="ar" id="osszeg" placeholder="Ár"><br>
+                <textarea name="ar" id="ajandek" placeholder="Ajándék" rows="2" cols="40"></textarea><br>
+                <input type="button" id="kalkulal" name="szamolo" value="Kalkulátor" onclick="kalkulator()">
+            </p>
+            <table class="termektabla">
+                <caption>Személyes adatok</caption>
+                <tr>
+                    <td>
+                        <label>Add meg a teljes neved!<br><input size="20" type="text" name="tnev"
+                                placeholder="Teljes név"></label><br>
+                        <label>Add meg az e-mail címed!<br><input size="20" type="email" name="emailcim"
+                                placeholder="E-mail cím"></label><br>                       
+                        <label>Add meg a lakcímed!<br><input type="text" name="iranyitosz" placeholder="Irányítószám"></label>
+                        <label><input type="text" name="varos" placeholder="Város"></label>
+                        <label><input type="text" name="utca" placeholder="Utca, házszám"></label><br>
+                        <label><input type="checkbox" name="feltetel">Elfogadom a vásárlási
+                            feltételeket</label><br>
+                        <label><input type="checkbox" name="hirlevel" checked>Feliratkozom a hírlevélre</label><br>
+                        <label><input type="submit" value="Vásárlás" name="vasarol"></label>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </section>
+    <footer>
+        <p>Az oldal nem reprezentálja a valós zenekart<br>
+            &copy; Mezőszentgyörgyi Dorka-Corvinus Egyetem 2023</p>
+    </footer>
+    <script src="kalkulator.js"></script>
+</body>
+
+</html>

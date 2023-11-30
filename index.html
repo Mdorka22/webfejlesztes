@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Mezőszentgyörgyi Dorka">
+    <meta name="description" content="A Wellhello zenekar weboldala">
+    <title>Wellhello</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300&family=Wallpoet&display=swap" rel="stylesheet">
+    <link href="wellhello.css" rel="stylesheet">
+    <script src="jquery-3.7.1.js"></script>
+    <script src="galleria-1.6.1/src/galleria.js"></script>
+    <script src="galleria-1.6.1/src/themes/classic/galleria.classic.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#fotogaleria').galleria(
+                width = 400,
+                height = 500
+            );
+        });
+    </script>
+    <script src="dist/jquery.validate.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#feliratkozo").validate({
+                rules: {
+                    iratkozas: {
+                        required: true,
+                        email: true,
+                    },
+                },
+                messages: {
+                    iratkozas: {
+                        required: "Az e-mail cím megadása kötelező",
+                        email: "Kérlek létező e-mail címet adj meg!"}
+                    }
+                });
+        });
+
+    </script>
+</head>
+
+<body>
+    <header class="flex-kontener">
+        <h1><a id="kezdolap" href="index.html">Wellhello</a></h1>
+    </header>
+    <nav class="flex-kontener">
+        <ul>
+            <li><a href="#" id="active">Főoldal</a></li>
+            <li><a href="rolunk.html">Rólunk</a></li>
+            <li><a href="koncertek.html">Koncertek</a></li>
+            <li><a href="termekek.html">Termékek</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="velemeny.html">Vélemény</a></li>
+        </ul>
+    </nav>
+    <div id="flex-kontener">
+        <figure>
+            <img class="borito" src="kezdolap/legujabbzene.jpg" alt="Legújabb dal borítója">
+        </figure>
+        <section>
+            <p class="ujzene">Elérhető legújabb zenénk<br> A Disco Club T.Danny együttműködésével</p>
+            <p><a class="gomb" href="https://www.youtube.com/watch?v=jh5loMOt2Sc">Hallgasd meg</a></p>
+        </section>
+        <section class="termekek">
+            <h3>Termékek</h3>
+            <table class="bemutato">
+                <tr>
+                    <td><img src="kezdolap/polo1.jpg" alt="Női pólók" class="ruha"><br>Női pólók</td>
+                    <td><img src="kezdolap/polo2.jpg" alt="Férfi pólók" class="ruha"><br>Férfi pólók</td>
+                </tr>
+                <tr>
+                    <td><img src="kezdolap/sapka.jpg" alt="Sapkák" class="ruha"><br>Sapkák</td>
+                    <td><img class="cd" src="kezdolap/cd.jpg" alt="CD"><br>CD-k</td>
+                </tr>
+            </table>
+            <p><a class="gomb" href="termekek.html">Vásárlás most</a></p>
+        </section>
+        <section>
+            <h3>Koncertek</h3>
+            <table class="datumok">
+                <tr>
+                    <td>2023.12.10 </td>
+                    <td>Budapest</td>
+                </tr>
+                <tr>
+                    <td>2023.12.15</td>
+                    <td>Kecskemét</td>
+                </tr>
+                <tr>
+                    <td>2023.12.22</td>
+                    <td>Pécs</td>
+                </tr>
+            </table>
+            <p><a class="gomb" href="koncertek.html">Összes dátum megtekintése</a></p>
+        </section>
+        <h3>Képgaléria</h3>
+        <section class="kepek" id="fotogaleria">
+            <img src="kepgaleria/pillanatkep1.jpg" alt="Budapest Park koncert" title="Vízi pisztolyzás">
+            <img src="kepgaleria/pillanatkep2.jpg" alt="Budapest Park koncert" title="Koncert előtti csatakiáltás">
+            <img src="kepgaleria/pillanatkep3.jpg" alt="Budapest Park koncert" title="Diaz és a táncos lányok">
+            <img src="kepgaleria/pillanatkep4.jpg" alt="Klipforgatás-Fluor és Diaz" title="A két rosszfiú">
+            <img src="kepgaleria/pillanatkep5.jpg" alt="Klipforgatás" title="Tomi mindig is csajozik">
+            <img src="kepgaleria/pillanatkep6.jpg" alt="Klipforgatás" title="Pénzben fürdő Diaz">
+            <img src="kepgaleria/pillanatkep7.jpg" alt="Mallorca" title="Pihenés és szelfizés">
+            <img src="kepgaleria/pillanatkep8.jpg" alt="Mallorca" title="Iszogatás">
+            <img src="kepgaleria/pillanatkep9.jpg" alt="Stúdiózás" title="Az AKC-s fiúkkal">
+            <img src="kepgaleria/pillanatkep10.jpg" alt="Strand fesztivál" title="Remek a hangulat, mint mindig">
+            <img src="kepgaleria/pillanatkep11.jpg" alt="Strand fesztivál" title="Táncoló Tomi és éneklő Diaz">
+            <img src="kepgaleria/pillanatkep12.jpg" alt="Pezsgőeső klipforgatás" title="Jó hangulat">
+            <img src="kepgaleria/pillanatkep13.jpg" alt="Pezsgőeső klipforgatás" title="Egyre jobb hangulat">
+            <img src="kepgaleria/pillanatkep14.jpg" alt="Aranylemezek" title="Számszerint 9">
+            <img src="kepgaleria/pillanatkep15.jpg" alt="Netflix toplista" title="Legnézetebb a #Sohavégetnemérős">
+            <img src="kepgaleria/pillanatkep16.jpg" alt="Az RTL stábja kérdezte őket" title="Tomi és Diaz nyilatkoznak">
+            <img src="kepgaleria/pillanatkep17.jpg" alt="A rózsaszín háttér előtt" title="Pózolás">
+            <img src="kepgaleria/pillanatkep18.jpg" alt="Kép 2014-ből" title="A kezdetek">
+        </section>
+        <section class="feliratkozas"> 
+            <form method="post" action="http://szamtud.uni-corvinus.hu/receive.php" novalidate id="feliratkozo">
+                <label>Iratkozz fel hírlevelünkre<br><input type="email" name="iratkozas" placeholder="Add meg az e-mail címed"></label>
+                <input type="submit" name="kuldes" value="Feliratkozás">
+            </form>
+        </section>
+        <section class="kovess">
+            <p>Kövess minket!</p>
+            <a href="https://www.tiktok.com/@wellhello_bello"><img class="kep" src="kezdolap/kovetes_ikon/tiktok.png"
+                    alt="tiktok logo"></a>
+            <a href="https://www.facebook.com/elnokok/?locale=hu_HU"><img class="kep"
+                    src="kezdolap/kovetes_ikon/facebook.png" alt="facebook logo"></a>
+            <a href="https://www.instagram.com/wellhello_hivatalos/?hl=hu"><img class="kep"
+                    src="kezdolap/kovetes_ikon/instagram.png" alt="instagram logo"></a>
+            <a href="https://www.youtube.com/@Wellhello"><img class="kep" src="kezdolap/kovetes_ikon/youtube.png"
+                    alt="youtube logo"></a>
+        </section>
+    </div>
+    <footer>
+        <p>Az oldal nem reprezentálja a valós zenekart<br>
+            &copy; Mezőszentgyörgyi Dorka-Corvinus Egyetem 2023</p>
+    </footer>
+</body>
+
+</html>
