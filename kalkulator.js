@@ -20,10 +20,10 @@ function kalkulator() {
     let db = (a + b + c + d + e + f + g + h + i + j + k + l);
     if (ar < 200000) {
         if (db >=10) {
-            ar = ar * 0.8;
+            ar = ar * 0.8+1500;
         }
         else if (db>=5) {
-            ar = ar * 0.9;
+            ar = ar * 0.9+1500;
         }
         else {ar = ar + 1500;}
     }
