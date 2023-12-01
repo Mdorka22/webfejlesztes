@@ -233,7 +233,11 @@ aside.zenek h3 {
     font-family: 'Wallpoet', sans-serif;
     font-size: 20px;
 }
-
+aside.zenek h2 {
+    color: #001f54;
+    font-family: 'Wallpoet', sans-serif;
+    
+}
 aside.zenek ul {
     list-style-image: url("rolunk/music-note.png");
 }
