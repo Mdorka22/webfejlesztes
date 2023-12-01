@@ -18,7 +18,7 @@ function kalkulator() {
     let l = Number(document.getElementById("cddb3").value);
     let ar = ((a + b + c + d + e + f) * poloar + (g + h + i) * sapkaar + (j + k + l) * cdar);
     let db = (a + b + c + d + e + f + g + h + i + j + k + l);
-    if (ar < 200000) {
+    if (ar < 20000) {
         if (db >=10) {
             ar = ar * 0.8+1500;
         }
